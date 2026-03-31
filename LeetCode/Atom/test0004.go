@@ -2,6 +2,7 @@
 
 import "fmt"
 
-func main()	{
+func main() {
 	fmt.Println("你好，世界！")
+	fmt.Println("Hello, World!")
 }
