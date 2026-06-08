@@ -1,4 +1,7 @@
-﻿from openai import OpenAI
+﻿import os
+os.environ["NO_PROXY"] = "localhost,127.0.0.1,192.168.*"
+
+from openai import OpenAI
 # Set OpenAI's API key and API base to use vLLM's API server.
 openai_api_key = "EMPTY"
 openai_api_base = "http://192.168.71.16:14268/v1"
@@ -9,7 +12,7 @@ client = OpenAI(
 )
 
 prompt = """
-钢铁是怎样炼成的是一部著名的小说，请给我生成此书的概要，包括主要任务和故事情节，大约2000字左右
+钢铁是怎样炼成的是一部著名的小说，请给我生成此书的概要，包括主要任务和故事情节，大约500字左右
 """
 with client.responses.create(
     model="/media/hdd/data01/llm/gemma-4-26B-A4B-IT",
